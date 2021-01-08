@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Mini-Projet</string>
     <string name="test">test</string>
+    <string name="s_enregistrer">S\'enregistrer</string>
+    <string name="se_connecter">Se connecter</string>
+    <string name="my_money_controller">My Money Controller</string>
 </resources>

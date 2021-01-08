@@ -10,7 +10,7 @@
 
     <Button
         android:id="@+id/buttonSeConnecterGoogle"
-        android:layout_width="300"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
         android:background="@color/colorSeConnecter"
@@ -23,12 +23,12 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonS'enreistrer"
-        android:layout_width="300"
+        android:id="@+id/buttonSenregistrer"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25"
+        android:layout_marginBottom="25dp"
         android:background="@color/colorSeConnecter"
-        android:hint="S'enregistrer"
+        android:hint="@string/s_enregistrer"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/buttonSeConnecterGoogle"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,12 +79,12 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@color/colorSeConnecter"
-        android:hint="Se connecter"
+        android:hint="@string/se_connecter"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
+        tools:ignore="HardcodedText,MissingConstraints"
         tools:layout_editor_absoluteY="433dp" />
 
     <ImageView
@@ -100,10 +100,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My Money Controller"
+        android:text="@string/my_money_controller"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         tools:layout_editor_absoluteX="123dp"
         tools:layout_editor_absoluteY="702dp"
         android:textColor="@color/colorPrimaryDark"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="HardcodedText,MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
