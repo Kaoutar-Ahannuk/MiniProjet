@@ -8,76 +8,79 @@
     tools:context=".MainActivity">
 
 
+    <ImageView
+        android:id="@+id/image3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/path_1"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="-101dp" />
+
+
     <Button
         android:id="@+id/buttonSeConnecterGoogle"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/button_format"
         android:hint="Se connecter avec google"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSeConnecter"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSenregistrer"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonSenregistrer"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/button_format"
         android:hint="@string/s_enregistrer"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSeConnecterGoogle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSeConnecter"
         tools:ignore="MissingConstraints" />
 
-
-    <ImageView
-        android:id="@+id/image3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        app:layout_constraintBottom_toBottomOf="@+id/image2"
-        app:srcCompat="@drawable/path_1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="24dp" />
 
     <ImageView
         android:id="@+id/image2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/image3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/asset_1"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="91dp"
         tools:ignore="MissingConstraints" />
-
 
     <Button
         android:id="@+id/buttonSeConnecter"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:background="@drawable/button_format"
         android:hint="@string/se_connecter"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteY="433dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewdescription"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <ImageView
         android:id="@+id/image5"
         android:layout_width="75dp"
         android:layout_height="53dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSeConnecterGoogle"
         app:srcCompat="@drawable/logo_app"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="168dp"
-        tools:layout_editor_absoluteY="641dp" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
@@ -85,22 +88,26 @@
         android:layout_height="wrap_content"
         android:text="@string/my_money_controller"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="702dp"
         android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image5"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <TextView
         android:id="@+id/textViewdescription"
         android:layout_width="342dp"
         android:layout_height="83dp"
+        android:layout_marginTop="52dp"
         android:text="@string/textdescription"
         android:textColor="@color/colordescription"
         android:textSize="24sp"
         android:typeface="serif"
         android:verticalScrollbarPosition="defaultPosition"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="324dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image2"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
