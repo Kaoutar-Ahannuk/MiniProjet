@@ -4,4 +4,6 @@
     <string name="se_connecter">Se connecter</string>
     <string name="my_money_controller">My Money Controller</string>
     <string name="textdescription">My Money Controller aide les gens à gérer leurs finances.</string>
+    <string name="email">Adresse Email</string>
+    <string name="motdepasse">Mot de passe</string>
 </resources>
