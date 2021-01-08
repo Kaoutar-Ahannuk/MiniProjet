@@ -6,4 +6,6 @@
     <string name="textdescription">My Money Controller aide les gens à gérer leurs finances.</string>
     <string name="email">Adresse Email</string>
     <string name="motdepasse">Mot de passe</string>
+    <string name="vous_etes">Vous êtes:</string>
+    <string name="salarie">Salarié</string>
 </resources>
