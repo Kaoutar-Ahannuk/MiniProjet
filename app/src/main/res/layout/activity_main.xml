@@ -58,10 +58,11 @@
         android:id="@+id/image3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image2"
         app:srcCompat="@drawable/path_1"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-91dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="24dp" />
 
     <ImageView
         android:id="@+id/image4"
@@ -75,14 +76,34 @@
 
     <Button
         android:id="@+id/buttonSeConnecter"
-        android:layout_width="300"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@color/colorSeConnecter"
         android:hint="Se connecter"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="458dp" />
+        tools:layout_editor_absoluteY="433dp" />
+
+    <ImageView
+        android:id="@+id/image5"
+        android:layout_width="75dp"
+        android:layout_height="53dp"
+        app:srcCompat="@drawable/logo_app"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="641dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Money Controller"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="702dp"
+        android:textColor="@color/colorPrimaryDark"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
