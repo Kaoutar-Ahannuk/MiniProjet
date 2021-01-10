@@ -8,15 +8,6 @@
     tools:context=".MainActivity">
 
 
-    <ImageView
-        android:id="@+id/image3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/path_1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="-74dp" />
-
     <Button
         android:id="@+id/buttonSeConnecterGoogle"
         android:layout_width="300dp"
@@ -26,35 +17,33 @@
         android:hint="Se connecter avec google"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSenregistrer"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/Senregistrer"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="56dp" />
 
     <Button
-        android:id="@+id/buttonSenregistrer"
+        android:id="@+id/Senregistrer"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button_format"
         android:hint="@string/s_enregistrer"
-        android:textColorHint="@color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSeConnecter"
         tools:ignore="MissingConstraints" />
-
 
     <ImageView
         android:id="@+id/image2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/image3"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/asset_1"
         tools:ignore="MissingConstraints" />
 
@@ -62,13 +51,13 @@
         android:id="@+id/buttonSeConnecter"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/button_format"
         android:hint="@string/se_connecter"
-        android:textColorHint="@color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewdescription"
         tools:ignore="HardcodedText,MissingConstraints" />
