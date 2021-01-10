@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.008"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/logo_app"
+        app:srcCompat="@drawable/asset2"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="38dp" />
 
@@ -188,19 +188,19 @@
 
     <Button
         android:id="@+id/imageView2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="35dp"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        android:background="@drawable/icon_awesome_home"
+        android:background="@drawable/icon_ionic_ios_home"
         tools:layout_editor_absoluteX="60dp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/imageButton3"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/icon_awesome_chart_pie"
         app:layout_constraintTop_toTopOf="@+id/imageView"
         tools:ignore="MissingConstraints"
@@ -208,9 +208,9 @@
 
     <Button
         android:id="@+id/imageButton4"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/icon_material_settings"
         app:layout_constraintTop_toTopOf="@+id/imageView"
         tools:ignore="MissingConstraints"
