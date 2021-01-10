@@ -4,7 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class S_enregistrerActivity extends AppCompatActivity {
+public class S_enregistrer extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

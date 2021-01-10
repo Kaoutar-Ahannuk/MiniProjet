@@ -4,36 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".S_enregistrerActivity">
-
-    <EditText
-        android:id="@+id/editTextPassword2"
-        android:layout_width="295dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/button_format2"
-        android:ems="10"
-        android:hint="Confirmer le mot de passe"
-        android:inputType="textPassword"
-        android:paddingLeft="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.474"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+    tools:context=".S_enregistrer">
 
     <Button
         android:id="@+id/buttonS_enregistrer"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/button_format"
         android:hint="@string/s_enregistrer"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <ImageView
@@ -41,9 +26,9 @@
         android:layout_width="50dp"
         android:layout_height="32dp"
         app:srcCompat="@drawable/icon_ionic_ios_arrow_back"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="22dp" />
 
     <TextView
         android:id="@+id/textViewSeConnecter"
@@ -63,7 +48,7 @@
         android:id="@+id/image5"
         android:layout_width="75dp"
         android:layout_height="53dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="92dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonS_enregistrer"
@@ -84,33 +69,62 @@
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/editTextNomComplet"
         android:layout_width="295dp"
         android:layout_height="49dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/button_format2"
         android:ems="10"
+        android:hint="@string/nom"
         android:inputType="textEmailAddress"
-        android:hint="@string/email"
         android:paddingLeft="80dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSeConnecter" />
+
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="295dp"
         android:layout_height="49dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button_format2"
         android:ems="10"
-        android:inputType="textPassword"
         android:hint="@string/motdepasse"
+        android:inputType="textPassword"
         android:paddingLeft="80dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNomComplet" />
+
+    <EditText
+        android:id="@+id/editTextConfirmPassword"
+        android:layout_width="295dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_format2"
+        android:ems="10"
+        android:hint="Confirmer le mot de passe"
+        android:inputType="textPassword"
+        android:paddingLeft="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+    <EditText
+        android:id="@+id/editTextNomComplet"
+        android:layout_width="295dp"
+        android:layout_height="49dp"
+        android:background="@drawable/button_format2"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNomComplet"
+        app:layout_constraintVertical_bias="0.332" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

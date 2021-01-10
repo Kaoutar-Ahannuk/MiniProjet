@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".PageActivity"></activity>
         <activity android:name=".S_enregistrerActivity2" />
-        <activity android:name=".S_enregistrerActivity" />
+        <activity android:name=".S_enregistrer" />
         <activity android:name=".ConnectActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
