@@ -17,9 +17,10 @@
         android:hint="Se connecter avec google"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Senregistrer"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="56dp" />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/Senregistrer"
