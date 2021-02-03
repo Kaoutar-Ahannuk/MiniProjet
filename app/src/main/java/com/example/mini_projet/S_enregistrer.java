@@ -39,7 +39,7 @@ public class S_enregistrer extends AppCompatActivity {
         setContentView(R.layout.activity_s_enregistrer);
 
         editTextNomComplet = findViewById(R.id.editTextNomComplet);
-        editTextEmial = findViewById(R.id.editTextEmail);
+        editTextEmial = findViewById(R.id.Email);
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
         buttonSenregistrer = findViewById(R.id.buttonSenregistrer);

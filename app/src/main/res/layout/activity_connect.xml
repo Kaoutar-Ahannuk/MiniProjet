@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.898"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/Password"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -80,7 +80,7 @@
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextEmail"
+        android:id="@+id/Email"
         android:layout_width="295dp"
         android:layout_height="49dp"
         android:layout_marginTop="56dp"
@@ -94,7 +94,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSeConnecter" />
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/Password"
         android:layout_width="295dp"
         android:layout_height="49dp"
         android:layout_marginTop="28dp"
@@ -106,7 +106,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/Email" />
 
 
 

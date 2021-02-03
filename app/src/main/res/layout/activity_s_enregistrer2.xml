@@ -82,40 +82,6 @@
 
     </LinearLayout>
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="150dp"
-        android:layout_height="240dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="300dp">
-
-
-        <RadioButton
-            android:id="@+id/radio3"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:text="Bourse:"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <RadioButton
-            android:id="@+id/radio2"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:text="Salaire:"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <RadioButton
-            android:id="@+id/radio1"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:text="Autres:"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-    </RadioGroup>
-
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
@@ -133,70 +99,79 @@
         android:id="@+id/textView7"
         android:layout_width="200dp"
         android:layout_height="80dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:gravity="center_vertical"
         android:hint="         xxxx.xxx DH"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintStart_toStartOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView6" />
 
     <EditText
         android:id="@+id/textView8"
         android:layout_width="200dp"
         android:layout_height="80dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginLeft="148dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:gravity="center_vertical"
         android:hint="         xxxx.xxx DH"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="@id/textView7"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="380dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/textView9"
         android:layout_width="200dp"
         android:layout_height="80dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:gravity="center_vertical"
         android:hint="         xxxx.xxx DH"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="460dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="100dp"
         android:layout_height="40dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/button_format2"
         android:gravity="center_horizontal"
         android:text="Somme:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="@id/radioGroup"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="564dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio1"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="     xxxx.xxx DH"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toEndOf="@id/textView10"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="564dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/image5"
         android:layout_width="75dp"
         android:layout_height="53dp"
         android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
         app:srcCompat="@drawable/asset2"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="168dp" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
@@ -217,12 +192,12 @@
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        app:layout_constraintStart_toEndOf="@id/image5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintVertical_bias="0.222"
         app:srcCompat="@drawable/group_26"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="625dp" />
+        tools:ignore="MissingConstraints" />
 
     <RadioButton
         android:id="@+id/radioButtonSalarie"
@@ -243,6 +218,45 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <RadioButton
+        android:id="@+id/radio3"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="24dp"
+        android:text="Bourse:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toStartOf="@+id/textView7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <RadioButton
+        android:id="@+id/radio2"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:text="Salaire:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toStartOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="0.701"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio3" />
+
+    <RadioButton
+        android:id="@+id/radio1"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:text="Autres:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toStartOf="@+id/textView9"
+        app:layout_constraintHorizontal_bias="0.701"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
