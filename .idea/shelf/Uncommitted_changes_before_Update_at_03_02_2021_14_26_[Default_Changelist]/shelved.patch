@@ -1,0 +1,146 @@
+Index: app/src/main/res/values/preloaded_fonts.xml
+===================================================================
+--- app/src/main/res/values/preloaded_fonts.xml	(revision 8178f46d36bbc170714542bb43638d28b9f3e9ea)
++++ app/src/main/res/values/preloaded_fonts.xml	(revision 8178f46d36bbc170714542bb43638d28b9f3e9ea)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<resources>
+-    <array name="preloaded_fonts" translatable="false">
+-        <item>@font/archivo_black</item>
+-    </array>
+-</resources>
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_08_01_2021_22_06__Default_Changelist_.xml
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Update_at_08_01_2021_22_06__Default_Changelist_.xml	(revision 8178f46d36bbc170714542bb43638d28b9f3e9ea)
++++ .idea/shelf/Uncommitted_changes_before_Update_at_08_01_2021_22_06__Default_Changelist_.xml	(revision 8178f46d36bbc170714542bb43638d28b9f3e9ea)
+@@ -1,34 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_08_01_2021_22_06_[Default_Changelist]" date="1610139981560" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_2021_22_06_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 08/01/2021 22:06 [Default Changelist]" />
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/src/main/res/drawable2/drawable-hdpi/Icon ionic-ios-arrow-back.png" />
+-    <option name="AFTER_PATH" />
+-    <option name="SHELVED_PATH" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/src/main/res/drawable2/drawable-ldpi/Icon ionic-ios-arrow-back.png" />
+-    <option name="AFTER_PATH" />
+-    <option name="SHELVED_PATH" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/src/main/res/drawable2/drawable-xxhdpi/Icon ionic-ios-arrow-back.png" />
+-    <option name="AFTER_PATH" />
+-    <option name="SHELVED_PATH" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/src/main/res/drawable2/drawable-xxxhdpi/Icon ionic-ios-arrow-back.png" />
+-    <option name="AFTER_PATH" />
+-    <option name="SHELVED_PATH" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/src/main/res/drawable2/drawable-xhdpi/Icon ionic-ios-arrow-back.png" />
+-    <option name="AFTER_PATH" />
+-    <option name="SHELVED_PATH" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/src/main/res/drawable2/drawable-mdpi/Icon ionic-ios-arrow-back.png" />
+-    <option name="AFTER_PATH" />
+-    <option name="SHELVED_PATH" />
+-  </binary>
+-</changelist>
+\ No newline at end of file
+Index: app/src/main/res/font/archivo_black.xml
+===================================================================
+--- app/src/main/res/font/archivo_black.xml	(revision 8178f46d36bbc170714542bb43638d28b9f3e9ea)
++++ app/src/main/res/font/archivo_black.xml	(revision 8178f46d36bbc170714542bb43638d28b9f3e9ea)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<font-family xmlns:app="http://schemas.android.com/apk/res-auto"
+-        app:fontProviderAuthority="com.google.android.gms.fonts"
+-        app:fontProviderPackage="com.google.android.gms"
+-        app:fontProviderQuery="Archivo Black"
+-        app:fontProviderCerts="@array/com_google_android_gms_fonts_certs">
+-</font-family>
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_08_01_2021_22_06_[Default_Changelist]/shelved.patch
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Update_at_08_01_2021_22_06_[Default_Changelist]/shelved.patch	(revision 8178f46d36bbc170714542bb43638d28b9f3e9ea)
++++ .idea/shelf/Uncommitted_changes_before_Update_at_08_01_2021_22_06_[Default_Changelist]/shelved.patch	(revision 8178f46d36bbc170714542bb43638d28b9f3e9ea)
+@@ -1,60 +0,0 @@
+-Index: app/src/main/res/layout/activity_s_enregistrer.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/res/layout/activity_s_enregistrer.xml	(date 1610136602940)
+-+++ app/src/main/res/layout/activity_s_enregistrer.xml	(date 1610136602940)
+-@@ -0,0 +1,9 @@
+-+<?xml version="1.0" encoding="utf-8"?>
+-+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-+    xmlns:app="http://schemas.android.com/apk/res-auto"
+-+    xmlns:tools="http://schemas.android.com/tools"
+-+    android:layout_width="match_parent"
+-+    android:layout_height="match_parent"
+-+    tools:context=".S_enregistrerActivity">
+-+
+-+</androidx.constraintlayout.widget.ConstraintLayout>
+-\ No newline at end of file
+-Index: app/src/main/AndroidManifest.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.example.mini_projet\">\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/AppTheme\">\r\n        <activity android:name=\".ConnectActivity\"></activity>\r\n        <activity android:name=\".MainActivity\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/AndroidManifest.xml	(revision 9a49554fbb8b65596fd2611dd015b88ef159bdd4)
+-+++ app/src/main/AndroidManifest.xml	(date 1610136602862)
+-@@ -9,7 +9,8 @@
+-         android:roundIcon="@mipmap/ic_launcher_round"
+-         android:supportsRtl="true"
+-         android:theme="@style/AppTheme">
+--        <activity android:name=".ConnectActivity"></activity>
+-+        <activity android:name=".S_enregistrerActivity"></activity>
+-+        <activity android:name=".ConnectActivity" />
+-         <activity android:name=".MainActivity">
+-             <intent-filter>
+-                 <action android:name="android.intent.action.MAIN" />
+-Index: app/src/main/java/com/example/mini_projet/S_enregistrerActivity.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/mini_projet/S_enregistrerActivity.java	(date 1610136603020)
+-+++ app/src/main/java/com/example/mini_projet/S_enregistrerActivity.java	(date 1610136603020)
+-@@ -0,0 +1,14 @@
+-+package com.example.mini_projet;
+-+
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+-+import android.os.Bundle;
+-+
+-+public class S_enregistrerActivity extends AppCompatActivity {
+-+
+-+    @Override
+-+    protected void onCreate(Bundle savedInstanceState) {
+-+        super.onCreate(savedInstanceState);
+-+        setContentView(R.layout.activity_s_enregistrer);
+-+    }
+-+}
+-\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>apply plugin: 'com.android.application'\r\napply plugin: 'com.google.gms.google-services'\r\n\r\nandroid {\r\n    compileSdkVersion 28\r\n    defaultConfig {\r\n        applicationId \"com.example.mini_projet\"\r\n        minSdkVersion 16\r\n        targetSdkVersion 28\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n}\r\n\r\ndependencies {\r\n    implementation fileTree(dir: 'libs', include: ['*.jar'])\r\n    implementation 'androidx.appcompat:appcompat:1.2.0'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'\r\n    implementation 'com.google.firebase:firebase-auth:19.2.0'\r\n    implementation 'com.google.firebase:firebase-firestore:22.0.1'\r\n    testImplementation 'junit:junit:4.12'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.2'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(revision 8178f46d36bbc170714542bb43638d28b9f3e9ea)
++++ app/build.gradle	(date 1610304220105)
+@@ -23,7 +23,7 @@
+     implementation fileTree(dir: 'libs', include: ['*.jar'])
+     implementation 'androidx.appcompat:appcompat:1.2.0'
+     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+-    implementation 'com.google.firebase:firebase-auth:19.2.0'
++    implementation 'com.google.firebase:firebase-auth:20.0.1'
+     implementation 'com.google.firebase:firebase-firestore:22.0.1'
+     testImplementation 'junit:junit:4.12'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
