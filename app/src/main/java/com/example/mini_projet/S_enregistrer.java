@@ -27,7 +27,7 @@ import java.util.Map;
 
 public class S_enregistrer extends AppCompatActivity {
     public static final String TAG = "TAG";
-    private EditText editTextNomComplet,editTextEmial,editTextPassword,editTextConfirmPassword;
+    private EditText NomComplet,Emial,Password,ConfirmPassword;
     private Button buttonSenregistrer;
     private FirebaseAuth fAuth;
     private FirebaseFirestore fStore;
@@ -38,10 +38,10 @@ public class S_enregistrer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_s_enregistrer);
 
-        editTextNomComplet = findViewById(R.id.editTextNomComplet);
-        editTextEmial = findViewById(R.id.editTextEmail);
-        editTextPassword = findViewById(R.id.editTextPassword);
-        editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
+        NomComplet = findViewById(R.id.NomComplet);
+        Emial = findViewById(R.id.Email);
+        Password = findViewById(R.id.Password);
+        ConfirmPassword = findViewById(R.id.ConfirmPassword);
         buttonSenregistrer = findViewById(R.id.buttonSenregistrer);
 
         fAuth = FirebaseAuth.getInstance();
@@ -54,37 +54,37 @@ public class S_enregistrer extends AppCompatActivity {
         buttonSenregistrer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String email = editTextEmial.getText().toString().trim();
-                String password = editTextPassword.getText().toString().trim();
-                String confirmpassword = editTextConfirmPassword.getText().toString().trim();
-                final String NomComplet = editTextNomComplet.getText().toString();
+                final String email = Emial.getText().toString().trim();
+                String password = Password.getText().toString().trim();
+                String confirmpassword = ConfirmPassword.getText().toString().trim();
+                final String CompletNom = NomComplet.getText().toString();
 
                 if(TextUtils.isEmpty(email)){
-                    editTextNomComplet.setError("Nom Complet est obligatoire.");
+                    NomComplet.setError("Nom Complet est obligatoire.");
                     return;
                 }
                 if(TextUtils.isEmpty(email)){
-                    editTextEmial.setError("L'adresse Email est obligatoire.");
+                    Emial.setError("L'adresse Email est obligatoire.");
                     return;
                 }
 
                 if(TextUtils.isEmpty(password)){
-                    editTextPassword.setError("Le mot de passe est obligatoire.");
+                    Password.setError("Le mot de passe est obligatoire.");
                     return;
                 }
 
                 if(TextUtils.isEmpty(password)){
-                    editTextConfirmPassword.setError("Confirmer le mot de passe est obligatoire.");
+                    ConfirmPassword.setError("Confirmer le mot de passe est obligatoire.");
                     return;
                 }
 
                 if(password.length() < 6){
-                    editTextPassword.setError("Le mot de passe doit etre  >= 6 Characters");
+                    Password.setError("Le mot de passe doit etre  >= 6 Characters");
                     return;
                 }
 
                 if(confirmpassword != password){
-                    editTextConfirmPassword.setError("Le mot de passe est faux");
+                    ConfirmPassword.setError("Le mot de passe est faux");
                 }
 
 
