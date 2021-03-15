@@ -199,7 +199,7 @@
         app:srcCompat="@drawable/group_26"
         tools:ignore="MissingConstraints" />
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/radioButtonSalarie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -209,7 +209,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/radioButtonEtudiant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -222,7 +222,7 @@
 
 
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/radio3"
         android:layout_width="150dp"
         android:layout_height="80dp"
@@ -236,7 +236,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/radio2"
         android:layout_width="150dp"
         android:layout_height="80dp"
@@ -247,7 +247,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radio3" />
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/radio1"
         android:layout_width="150dp"
         android:layout_height="80dp"
