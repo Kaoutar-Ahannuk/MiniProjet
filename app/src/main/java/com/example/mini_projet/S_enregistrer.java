@@ -27,7 +27,7 @@ import java.util.Map;
 
 public class S_enregistrer extends AppCompatActivity {
     public static final String TAG = "TAG";
-    private EditText NomComplet,Emial,Password,ConfirmPassword;
+    EditText NomComplet,Emial,Password,ConfirmPassword;
     private Button buttonSenregistrer;
     private FirebaseAuth fAuth;
     private FirebaseFirestore fStore;
@@ -114,8 +114,6 @@ public class S_enregistrer extends AppCompatActivity {
                             userID = fAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = fStore.collection("users").document(userID);
                             Map<String,Object> user = new HashMap<>();
-                            user.put("NomComplet",CompletNom);
-                            user.put("email",email);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
@@ -137,5 +135,6 @@ public class S_enregistrer extends AppCompatActivity {
             }
          });
     }
+
 }
 
