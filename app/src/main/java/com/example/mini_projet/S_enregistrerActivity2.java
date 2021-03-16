@@ -10,8 +10,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 public class S_enregistrerActivity2 extends AppCompatActivity {
-    EditText somme;
-    ImageButton next;
+
+    private EditText somme;
+    private ImageButton next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
