@@ -59,7 +59,7 @@ public class S_enregistrer extends AppCompatActivity {
                 String confirmpassword = ConfirmPassword.getText().toString().trim();
                 final String CompletNom = NomComplet.getText().toString();
 
-                if(TextUtils.isEmpty(email)){
+                if(TextUtils.isEmpty(CompletNom)){
                     NomComplet.setError("Nom Complet est obligatoire.");
                     return;
                 }
@@ -73,7 +73,7 @@ public class S_enregistrer extends AppCompatActivity {
                     return;
                 }
 
-                if(TextUtils.isEmpty(password)){
+                if(TextUtils.isEmpty(confirmpassword)){
                     ConfirmPassword.setError("Confirmer le mot de passe est obligatoire.");
                     return;
                 }
@@ -114,7 +114,7 @@ public class S_enregistrer extends AppCompatActivity {
                             userID = fAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = fStore.collection("users").document(userID);
                             Map<String,Object> user = new HashMap<>();
-                            user.put("NomComplet",NomComplet);
+                            user.put("NomComplet",CompletNom);
                             user.put("email",email);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
