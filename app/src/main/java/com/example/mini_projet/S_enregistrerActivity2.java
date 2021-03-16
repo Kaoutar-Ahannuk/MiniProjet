@@ -31,8 +31,6 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
     private FirebaseAuth fAuth;
     private FirebaseFirestore fStore;
     private String userID;
-    S_enregistrer CompletNom;
-    S_enregistrer email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,18 +43,19 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent x=getIntent();
                 String sum = somme.getText().toString();
 
                 userID = fAuth.getCurrentUser().getUid();
                 DocumentReference documentReference = fStore.collection("users").document(userID);
                 Map<String,Object> user = new HashMap<>();
 
-                user.put("NomComplet",CompletNom);
-                user.put("email",email);
+                user.put("NomComplet",x.getStringExtra("Nom_Complet"));
+                user.put("email",x.getStringExtra("email"));
                 user.put("somme",sum);
 
                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -78,6 +77,7 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                 i.putExtra("somme",somme.getText());
                 startActivity(i);
                 */
+
             }
         });
 
@@ -85,7 +85,7 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();//logout
-                startActivity(new Intent(getApplicationContext(),S_enregistrer.class));
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 finish();
             }
         });

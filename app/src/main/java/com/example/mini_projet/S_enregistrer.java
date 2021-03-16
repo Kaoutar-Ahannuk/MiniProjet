@@ -125,7 +125,10 @@ public class S_enregistrer extends AppCompatActivity {
                                     Log.d(TAG, "onFailure: " + e.toString());
                                 }
                             });
-                            startActivity(new Intent(getApplicationContext(),S_enregistrerActivity2.class));
+                            Intent i=new Intent(getApplicationContext(),S_enregistrerActivity2.class);
+                            i.putExtra("Nom_Complet",CompletNom);
+                            i.putExtra("email",email);
+                            startActivity(i);
 
                         }else {
                             Toast.makeText(S_enregistrer.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
