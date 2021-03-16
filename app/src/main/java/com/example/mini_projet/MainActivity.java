@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(account != null){
             Toast.makeText(this,"You Signed In successfully",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(this,PageActivity.class));
+            startActivity(new Intent(this,S_enregistrerActivity2.class));
 
         }else {
             Toast.makeText(this,"You Didn't signed in",Toast.LENGTH_LONG).show();
