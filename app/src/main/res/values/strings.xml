@@ -10,5 +10,7 @@
     <string name="vous_etes">Vous êtes:</string>
     <string name="salarie">Salarié</string>
     <string name="vos_depenses">Vos dépenses:</string>
-    <string name="selectionner">--Selectionner--</string>
+    <string name="selectionner">--Selectionner vos depenses--</string>
+    <string name="selectionner2">--Selectionner vos ressources--</string>
+
 </resources>

@@ -36,16 +36,18 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
     private EditText somme;
     private ImageButton next;
     private Button btn_out;
-    private ListView list1;
+    private ListView list1,list2;
     private FirebaseAuth fAuth;
     private FirebaseFirestore fStore;
     private String userID;
     //variables select
-    TextView select;
-    boolean[] selectedDepense;
+    TextView select,select2;
+    boolean[] selectedDepense,selectedRessource;
     ArrayList<String> depenseList = new ArrayList<>();
-    String[] depenseArray = {"Maison","food","Medicament","Telephone","Eau et electricite","sport","argent du poche","autres"};
-    ArrayAdapter adapter;
+    ArrayList<String> ressourceList = new ArrayList<>();
+    String[] depenseArray = {"Maison","food","Medicament","Telephone","Eau et electricite","sport","argent de poche","Autres"};
+    String[] ressourceArray = {"Salaire","Bourse","Autres"};
+    ArrayAdapter adapter,adapter2;
 
 
     @Override
@@ -60,11 +62,13 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
         select = findViewById(R.id.select);
         list1=findViewById(R.id.list1);
+        select2 = findViewById(R.id.select2);
+        list2=findViewById(R.id.list2);
 
 
-
-        //initialize selected depense array
+        //initialize selected depense array and ressource array
         selectedDepense = new boolean[depenseArray.length];
+        selectedRessource = new boolean[ressourceArray.length];
 
         select.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,6 +131,67 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                 builder.show();
             }
         });
+        select2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //initialize alert dialog
+                AlertDialog.Builder builder = new AlertDialog.Builder(
+                        S_enregistrerActivity2.this
+                );
+
+                builder.setTitle("Selectionner vos ressources");
+                builder.setCancelable(false);
+                builder.setMultiChoiceItems(ressourceArray, selectedRessource, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i, boolean b) {
+                        if(b){
+                            ressourceList.add(ressourceArray[i]);
+                            Collections.sort(ressourceList);
+                        }else {
+                            ressourceList.remove(ressourceArray[i]);
+                        }
+                    }
+                });
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        /*StringBuilder stringBuilder = new StringBuilder();
+                        for(int j=0; j<depenseList.size(); j++){
+                            stringBuilder.append(depenseArray[depenseList.get(j)]);
+                            if(j != depenseList.size()-1){
+                                stringBuilder.append(", ");
+                            }
+                        }
+
+                        select.setText(stringBuilder.toString());
+                        */
+                        adapter2 =new ArrayAdapter(S_enregistrerActivity2.this,R.layout.element,R.id.t1,ressourceList);
+                        list2.setAdapter(adapter2);
+                    }
+                });
+
+                builder.setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                builder.setNeutralButton("Supprimer tous", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        for(int j=0; j<selectedRessource.length; j++) {
+                            selectedRessource[j] = false;
+                            list2.removeViewAt(j);
+                            adapter2.notifyDataSetChanged();
+                        }
+                    }
+                });
+
+                builder.show();
+            }
+        });
 
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -157,12 +222,11 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                /* if(TextUtils.isEmpty(somme.getText().toString())) {
                     somme.setError("La somme est obligatoire.");
                     return;
-                }
+                }*/
                 Intent i=new Intent(S_enregistrerActivity2.this,PageActivity.class);
                 i.putExtra("somme",somme.getText());
                 startActivity(i);
-                */
-                startActivity(new Intent(getApplicationContext(),Ajout_Activity.class));
+
             }
         });
 

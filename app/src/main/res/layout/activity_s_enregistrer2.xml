@@ -11,7 +11,7 @@
         android:id="@+id/res"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="16dp"
         android:text="Vos ressources:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,11 +24,11 @@
         android:id="@+id/dep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="260dp"
         android:text="@string/vos_depenses"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -37,9 +37,9 @@
         android:id="@+id/textView10"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="164dp"
         android:background="@drawable/button_format2"
         android:gravity="center_horizontal"
         android:text="Somme:"
@@ -52,12 +52,12 @@
         android:id="@+id/somme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="164dp"
         android:ems="10"
         android:hint="     xxxx.xxx DH"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toEndOf="@id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/res"
         tools:ignore="MissingConstraints" />
@@ -100,7 +100,6 @@
         android:paddingLeft="80dp"
         app:layout_constraintBottom_toTopOf="@+id/image5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.422"
         app:layout_constraintStart_toStartOf="@+id/out"
         app:layout_constraintTop_toBottomOf="@+id/dep"
         app:layout_constraintVertical_bias="0.0" />
@@ -114,7 +113,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/somme"
-        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintVertical_bias="0.941"
         app:srcCompat="@drawable/group_26"
         tools:ignore="MissingConstraints" />
 
@@ -136,7 +135,32 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/select"
-        app:layout_constraintVertical_bias="0.065" />
+        app:layout_constraintVertical_bias="0.038" />
+
+    <TextView
+        android:id="@+id/select2"
+        android:layout_width="295dp"
+        android:layout_height="49dp"
+        android:background="@drawable/button_format2"
+        android:gravity="center_horizontal|center_vertical"
+        android:hint="@string/selectionner2"
+        android:paddingLeft="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/somme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/out"
+        app:layout_constraintTop_toBottomOf="@+id/res"
+        app:layout_constraintVertical_bias="0.176" />
+
+    <ListView
+        android:id="@+id/list2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/somme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select2"
+        app:layout_constraintVertical_bias="0.094" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
