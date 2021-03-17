@@ -224,7 +224,7 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                     return;
                 }*/
                 Intent i=new Intent(S_enregistrerActivity2.this,PageActivity.class);
-                i.putExtra("somme",somme.getText());
+                i.putExtra("somme",somme.getText().toString());
                 startActivity(i);
 
             }
