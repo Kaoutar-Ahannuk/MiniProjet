@@ -9,4 +9,6 @@
     <string name="motdepasse">Mot de passe</string>
     <string name="vous_etes">Vous êtes:</string>
     <string name="salarie">Salarié</string>
+    <string name="vos_depenses">Vos dépenses:</string>
+    <string name="selectionner">--Selectionner--</string>
 </resources>

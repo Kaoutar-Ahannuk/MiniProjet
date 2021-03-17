@@ -1,8 +1,10 @@
 package com.example.mini_projet;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -18,6 +21,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import com.example.mini_projet.S_enregistrer;
@@ -31,6 +37,12 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
     private FirebaseAuth fAuth;
     private FirebaseFirestore fStore;
     private String userID;
+    //variables select
+    TextView select;
+    boolean[] selectedDepense;
+    ArrayList<Integer> depenseList = new ArrayList<>();
+    String[] depenseArray = {"Maison","food","Medicament","Telephone","Eau et electricite","sport","argent du poche","autres"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +54,70 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
         btn_out = findViewById(R.id.out);
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
+        select = findViewById(R.id.select);
+
+        //initialize selected depense array
+        selectedDepense = new boolean[depenseArray.length];
+
+        select.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //initialize alert dialog
+                AlertDialog.Builder builder = new AlertDialog.Builder(
+                        S_enregistrerActivity2.this
+                );
+
+                builder.setTitle("Selectionner vos depenses");
+                builder.setCancelable(false);
+                builder.setMultiChoiceItems(depenseArray, selectedDepense, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i, boolean b) {
+                        if(b){
+                            depenseList.add(i);
+                            Collections.sort(depenseList);
+                        }else {
+                            depenseList.remove(i);
+                        }
+                    }
+                });
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        StringBuilder stringBuilder = new StringBuilder();
+
+                        for(int j=0; j<depenseList.size(); j++){
+                            stringBuilder.append(depenseArray[depenseList.get(j)]);
+                            if(j != depenseList.size()-1){
+                                stringBuilder.append(", ");
+                            }
+                        }
+
+                        select.setText(stringBuilder.toString());
+                    }
+                });
+
+                builder.setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                builder.setNeutralButton("Supprimer tous", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        for(int j=0; j<selectedDepense.length; j++){
+                            selectedDepense[j] = false;
+                            depenseList.clear();
+                            select.setText("");
+                        }
+                    }
+                });
+
+                builder.show();
+            }
+        });
 
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +153,7 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                 i.putExtra("somme",somme.getText());
                 startActivity(i);
                 */
-
+                startActivity(new Intent(getApplicationContext(),Ajout_Activity.class));
             }
         });
 
