@@ -10,9 +10,11 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -34,14 +36,16 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
     private EditText somme;
     private ImageButton next;
     private Button btn_out;
+    private ListView list1;
     private FirebaseAuth fAuth;
     private FirebaseFirestore fStore;
     private String userID;
     //variables select
     TextView select;
     boolean[] selectedDepense;
-    ArrayList<Integer> depenseList = new ArrayList<>();
+    ArrayList<String> depenseList = new ArrayList<>();
     String[] depenseArray = {"Maison","food","Medicament","Telephone","Eau et electricite","sport","argent du poche","autres"};
+    ArrayAdapter adapter;
 
 
     @Override
@@ -55,6 +59,9 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         select = findViewById(R.id.select);
+        list1=findViewById(R.id.list1);
+
+
 
         //initialize selected depense array
         selectedDepense = new boolean[depenseArray.length];
@@ -73,10 +80,10 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i, boolean b) {
                         if(b){
-                            depenseList.add(i);
+                            depenseList.add(depenseArray[i]);
                             Collections.sort(depenseList);
                         }else {
-                            depenseList.remove(i);
+                            depenseList.remove(depenseArray[i]);
                         }
                     }
                 });
@@ -84,8 +91,7 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        StringBuilder stringBuilder = new StringBuilder();
-
+                        /*StringBuilder stringBuilder = new StringBuilder();
                         for(int j=0; j<depenseList.size(); j++){
                             stringBuilder.append(depenseArray[depenseList.get(j)]);
                             if(j != depenseList.size()-1){
@@ -94,6 +100,9 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                         }
 
                         select.setText(stringBuilder.toString());
+                        */
+                        adapter =new ArrayAdapter(S_enregistrerActivity2.this,R.layout.element,R.id.t1,depenseList);
+                        list1.setAdapter(adapter);
                     }
                 });
 
@@ -107,10 +116,10 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                 builder.setNeutralButton("Supprimer tous", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        for(int j=0; j<selectedDepense.length; j++){
+                        for(int j=0; j<selectedDepense.length; j++) {
                             selectedDepense[j] = false;
-                            depenseList.clear();
-                            select.setText("");
+                            list1.removeViewAt(j);
+                            adapter.notifyDataSetChanged();
                         }
                     }
                 });

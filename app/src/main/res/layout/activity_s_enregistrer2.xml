@@ -95,12 +95,15 @@
         android:layout_height="49dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/button_format2"
+        android:gravity="center_horizontal|center_vertical"
         android:hint="@string/selectionner"
-        android:gravity="center_horizontal"
         android:paddingLeft="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/image5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.422"
         app:layout_constraintStart_toStartOf="@+id/out"
-        app:layout_constraintTop_toBottomOf="@+id/dep" />
+        app:layout_constraintTop_toBottomOf="@+id/dep"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/next"
@@ -111,7 +114,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/somme"
-        app:layout_constraintVertical_bias="0.665"
+        app:layout_constraintVertical_bias="0.9"
         app:srcCompat="@drawable/group_26"
         tools:ignore="MissingConstraints" />
 
@@ -122,6 +125,18 @@
         android:text="sign out"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/list1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/image5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select"
+        app:layout_constraintVertical_bias="0.065" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
