@@ -12,12 +12,12 @@
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/button_format5"
         android:orientation="horizontal"
         android:padding="30px"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/linearLayout2"
         app:layout_constraintTop_toBottomOf="@id/linearLayout"
         tools:ignore="MissingConstraints">
@@ -80,11 +80,12 @@
         android:id="@+id/linearLayout"
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/button_format3"
         android:orientation="horizontal"
         android:padding="30px"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="MissingConstraints">
@@ -121,9 +122,9 @@
         android:id="@+id/linearLayout2"
         android:layout_width="180dp"
         android:layout_height="80dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/buttun_format4"
         android:orientation="horizontal"
         android:padding="30px"
@@ -159,20 +160,6 @@
             tools:layout_editor_absoluteY="243dp" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Les dépenses du mois"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
-        tools:ignore="MissingConstraints" />
-
     <Button
         android:id="@+id/ajout"
         android:layout_width="100dp"
@@ -181,8 +168,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toEndOf="@+id/imageButton3"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar3"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="651dp" />
 
     <ImageView
         android:id="@+id/ImageView1"
@@ -192,14 +179,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@drawable/button_format"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-30dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/imageView2"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="68dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginRight="68dp"
         android:background="@drawable/icon_ionic_ios_home"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -214,160 +201,23 @@
         android:id="@+id/imageButton3"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginTop="32dp"
         android:background="@drawable/icon_awesome_chart_pie"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar3"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="169dp" />
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="686dp" />
 
     <Button
         android:id="@+id/imageButton4"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/icon_material_settings"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.331"
         app:layout_constraintStart_toEndOf="@+id/imageButton3"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar3"
-        app:layout_constraintVertical_bias="0.777"
         tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginRight="76dp"
-        app:layout_constraintEnd_toEndOf="@id/textView15"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15"
-        app:srcCompat="@drawable/icon_material_phone_android"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:hint="xxxx DH"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.414"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="0.772"
-        tools:ignore="MissingConstraints" />
-
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="300dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginEnd="228dp"
-        android:layout_marginRight="228dp"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar"
-        app:layout_constraintHorizontal_bias="0.978"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar2"
-        app:layout_constraintVertical_bias="0.375"
-        app:srcCompat="@drawable/icon_map_food"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:hint="xxxx DH"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.417"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar2"
-        tools:ignore="MissingConstraints" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="300dp"
-        android:layout_height="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/voirPlus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-
-    <Button
-        android:id="@+id/voirPlus"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/group_28"
-        android:translationX="-50dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView19"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="28dp"
-        android:text="Les reste du mois"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/progressBar"
-        app:layout_constraintVertical_bias="0.523"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:hint="xxxx DH"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.562"
-        app:layout_constraintStart_toEndOf="@id/textView16"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="577dp" />
-
-    <ProgressBar
-        android:id="@+id/progressBar3"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="300dp"
-        android:layout_height="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/ImageView1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.414"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
