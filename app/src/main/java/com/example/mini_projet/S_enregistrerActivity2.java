@@ -4,9 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.ScriptGroup;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,7 +35,7 @@ import java.util.HashMap;
 import java.util.Map;
 import com.example.mini_projet.S_enregistrer;
 
-public class S_enregistrerActivity2 extends AppCompatActivity {
+public class S_enregistrerActivity2 extends AppCompatActivity implements ExampleDialog.ExampleDialogListener {
 
     public static final String TAG = "TAG";
     private EditText somme;
@@ -49,6 +54,12 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
     String[] ressourceArray = {"Salaire","Bourse","Autres"};
     ArrayAdapter adapter,adapter2;
 
+    private TextView txthome;
+    private TextView txtfod;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +74,10 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
         select = findViewById(R.id.select);
         list1=findViewById(R.id.list1);
         select2 = findViewById(R.id.select2);
-        list2=findViewById(R.id.list2);
+        list2 = findViewById(R.id.list2);
 
+        txthome = findViewById(R.id.txthome);
+        txtfod = findViewById(R.id.txtfod);
 
         //initialize selected depense array and ressource array
         selectedDepense = new boolean[depenseArray.length];
@@ -72,7 +85,14 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
 
         select.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
+                openDialog();
+            }
+        });
+/*
+        select.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
                 //initialize alert dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(
                         S_enregistrerActivity2.this
@@ -93,6 +113,7 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                 });
 
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @SuppressLint("ResourceType")
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         /*StringBuilder stringBuilder = new StringBuilder();
@@ -104,9 +125,15 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                         }
 
                         select.setText(stringBuilder.toString());
-                        */
+
                         adapter =new ArrayAdapter(S_enregistrerActivity2.this,R.layout.element,R.id.t1,depenseList);
                         list1.setAdapter(adapter);
+
+                        String[] items = new String[adapter.getCount()];
+                        for(int j= 0; j < adapter.getCount(); j++){
+                            items[j] = (String) adapter.getItem(j);
+                            Log.d("TAG", "Item nr: " +j+ " "+ adapter.getItem(j));
+                        }
                     }
                 });
 
@@ -135,7 +162,7 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //initialize alert dialog
-                AlertDialog.Builder builder = new AlertDialog.Builder(
+                final AlertDialog.Builder builder = new AlertDialog.Builder(
                         S_enregistrerActivity2.this
                 );
 
@@ -165,7 +192,7 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                         }
 
                         select.setText(stringBuilder.toString());
-                        */
+
                         adapter2 =new ArrayAdapter(S_enregistrerActivity2.this,R.layout.element,R.id.t1,ressourceList);
                         list2.setAdapter(adapter2);
                     }
@@ -191,7 +218,7 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
 
                 builder.show();
             }
-        });
+        });*/
 
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -238,5 +265,16 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public void openDialog() {
+        ExampleDialog exampleDialog = new ExampleDialog();
+        exampleDialog.show(getSupportFragmentManager(), "example dialog");
+    }
+
+    @Override
+    public void applyTexts(String username, String password) {
+        txthome.setText(username);
+        txtfod.setText(password);
     }
 }
