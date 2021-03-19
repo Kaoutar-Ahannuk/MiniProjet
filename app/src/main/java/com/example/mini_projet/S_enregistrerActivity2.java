@@ -50,9 +50,6 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
     private Button buttonSomme,buttonSomme2;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,23 +77,42 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
         buttonSomme = findViewById(R.id.buttonSomme);
         buttonSomme2 = findViewById(R.id.buttonSomme2);
 
+        userID = fAuth.getCurrentUser().getUid();
+        final DocumentReference documentReference = fStore.collection("users").document(userID);
+        final Map<String,Object> user = new HashMap<>();
+        final Map<String, String> cheked = new HashMap<>();
+
         buttonSomme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int sum=0;
+                String[] listChecked = new String[3];
+                String[] listCheckedValues = new String[3];
                 if(checkSalaire.isChecked()){
                     int sal = Integer.parseInt(salaire.getText().toString());
                     sum += sal;
+                    listChecked[0]= String.valueOf(checkSalaire.getText());
+                    listCheckedValues[0]= String.valueOf(salaire.getText());
+
                 }
                 if(checkBourse.isChecked()){
                     int bours = Integer.parseInt(bourse.getText().toString());
                     sum += bours;
+                    listChecked[1]= String.valueOf(checkBourse.getText());
+                    listCheckedValues[1]= String.valueOf(bourse.getText());
                 }
                 if(checkAutres.isChecked()){
                     int autre = Integer.parseInt(autres.getText().toString());
                     sum += autre;
+                    listChecked[2]= String.valueOf(checkAutres.getText());
+                    listCheckedValues[2]= String.valueOf(autres.getText());
                 }
                 somme.setText(String.valueOf(sum));
+                for (String ch : listChecked ) {
+                    for (String ch2 : listCheckedValues )
+                    cheked.put(ch, ch2);
+                    continue;
+                }
                 }
         });
         buttonSomme2.setOnClickListener(new View.OnClickListener() {
@@ -144,14 +160,12 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                 String sumRess = somme.getText().toString();
                 String sumDepenses= somme2.getText().toString();
 
-                userID = fAuth.getCurrentUser().getUid();
-                DocumentReference documentReference = fStore.collection("users").document(userID);
-                Map<String,Object> user = new HashMap<>();
 
                 //user.put("Nom Complet",x.getStringExtra("Nom_Complet"));
                 user.put("email",x.getStringExtra("email"));
                 user.put("Somme Ressources",sumRess);
                 user.put("Somme Depenses",sumDepenses);
+                user.put("list",cheked);
 
                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
