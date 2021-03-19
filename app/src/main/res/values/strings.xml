@@ -12,5 +12,10 @@
     <string name="vos_depenses">Vos dépenses:</string>
     <string name="selectionner">--Selectionner vos depenses--</string>
     <string name="selectionner2">--Selectionner vos ressources--</string>
+    <string name="salaire">Salaire</string>
+    <string name="bourse">Bourse</string>
+    <string name="autres">Autres</string>
+    <string name="xxx_xxx">xxx.xxx</string>
+    <string name="somme">Somme:</string>
 
 </resources>

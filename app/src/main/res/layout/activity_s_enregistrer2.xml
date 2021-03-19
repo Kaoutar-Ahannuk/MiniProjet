@@ -21,46 +21,18 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
+
     <TextView
         android:id="@+id/dep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="324dp"
         android:text="@string/vos_depenses"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="164dp"
-        android:background="@drawable/button_format2"
-        android:gravity="center_horizontal"
-        android:text="Somme:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/res"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/somme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
-        android:ems="10"
-        android:hint="     xxxx.xxx DH"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
-        app:layout_constraintStart_toEndOf="@id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/res"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -90,21 +62,6 @@
         tools:ignore="HardcodedText,MissingConstraints" />
 
 
-    <TextView
-        android:id="@+id/select"
-        android:layout_width="295dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/button_format2"
-        android:gravity="center_horizontal|center_vertical"
-        android:hint="@string/selectionner"
-        android:paddingLeft="80dp"
-        app:layout_constraintBottom_toTopOf="@+id/image5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/out"
-        app:layout_constraintTop_toBottomOf="@+id/dep"
-        app:layout_constraintVertical_bias="0.0" />
-
     <ImageButton
         android:id="@+id/next"
         android:layout_width="wrap_content"
@@ -113,7 +70,6 @@
         android:layout_marginRight="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/somme"
         app:layout_constraintVertical_bias="0.941"
         app:srcCompat="@drawable/group_26"
         tools:ignore="MissingConstraints" />
@@ -126,70 +82,110 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ListView
-        android:id="@+id/list1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/image5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/select"
-        app:layout_constraintVertical_bias="0.038" />
-
-    <TextView
-        android:id="@+id/select2"
-        android:layout_width="295dp"
-        android:layout_height="49dp"
-        android:background="@drawable/button_format2"
-        android:gravity="center_horizontal|center_vertical"
-        android:hint="@string/selectionner2"
-        android:paddingLeft="80dp"
-        app:layout_constraintBottom_toTopOf="@+id/somme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/out"
-        app:layout_constraintTop_toBottomOf="@+id/res"
-        app:layout_constraintVertical_bias="0.176" />
-
-    <ListView
-        android:id="@+id/list2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/somme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/select2"
-        app:layout_constraintVertical_bias="0.094" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="314dp" />
-
-    <TextView
-        android:id="@+id/txthome"
+    <CheckBox
+        android:id="@+id/checkSalaire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:text="TextView"
+        android:layout_marginTop="24dp"
+        android:text="@string/salaire"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/select" />
+        app:layout_constraintTop_toBottomOf="@+id/res" />
 
-    <TextView
-        android:id="@+id/txtfod"
+    <CheckBox
+        android:id="@+id/checkBourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:text="TextView"
+        android:layout_marginTop="22dp"
+        android:text="@string/bourse"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/select" />
+        app:layout_constraintTop_toBottomOf="@+id/checkSalaire" />
 
+    <CheckBox
+        android:id="@+id/checkAutres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/autres"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBourse" />
+
+    <EditText
+        android:id="@+id/salaire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="@string/xxx_xxx"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toEndOf="@+id/checkSalaire"
+        app:layout_constraintTop_toBottomOf="@+id/res" />
+
+    <EditText
+        android:id="@+id/bourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/xxx_xxx"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkBourse"
+        app:layout_constraintTop_toBottomOf="@+id/salaire" />
+
+    <EditText
+        android:id="@+id/autres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/xxx_xxx"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toEndOf="@+id/checkAutres"
+        app:layout_constraintTop_toBottomOf="@+id/bourse" />
+
+    <TextView
+        android:id="@+id/textViewSomme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.314"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkAutres" />
+
+    <TextView
+        android:id="@+id/somme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toEndOf="@+id/textViewSomme"
+        app:layout_constraintTop_toBottomOf="@+id/autres" />
+
+    <Button
+        android:id="@+id/buttonSomme"
+        android:layout_width="95dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_format"
+        android:text="@string/somme"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autres" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
