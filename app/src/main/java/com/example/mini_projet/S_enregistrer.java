@@ -126,7 +126,7 @@ public class S_enregistrer extends AppCompatActivity {
                                 }
                             });
                             Intent i=new Intent(getApplicationContext(),S_enregistrerActivity2.class);
-                            i.putExtra("Nom_Complet",CompletNom);
+                           // i.putExtra("Nom_Complet",CompletNom);
                             i.putExtra("email",email);
                             startActivity(i);
 

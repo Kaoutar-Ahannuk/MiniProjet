@@ -8,6 +8,19 @@
     tools:context=".S_enregistrerActivity2">
 
 
+    <EditText
+        android:id="@+id/argentPoche2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:ems="10"
+        android:hint="@string/xxx_xxx"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toEndOf="@+id/ArgentDePoche"
+        app:layout_constraintTop_toBottomOf="@+id/eauElect" />
+
     <TextView
         android:id="@+id/res"
         android:layout_width="wrap_content"
@@ -26,20 +39,20 @@
         android:id="@+id/dep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="324dp"
+        android:layout_marginTop="272dp"
         android:text="@string/vos_depenses"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/image5"
-        android:layout_width="75dp"
+        android:layout_width="55dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,9 +81,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.941"
         app:srcCompat="@drawable/group_26"
         tools:ignore="MissingConstraints" />
 
@@ -115,18 +128,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBourse" />
 
-    <EditText
-        android:id="@+id/salaire"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="number"
-        android:hint="@string/xxx_xxx"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toEndOf="@+id/checkSalaire"
-        app:layout_constraintTop_toBottomOf="@+id/res" />
 
     <EditText
         android:id="@+id/bourse"
@@ -154,38 +155,220 @@
         app:layout_constraintTop_toBottomOf="@+id/bourse" />
 
     <TextView
-        android:id="@+id/textViewSomme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.314"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkAutres" />
-
-    <TextView
         android:id="@+id/somme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="24dp"
         android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/dep"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toEndOf="@+id/textViewSomme"
-        app:layout_constraintTop_toBottomOf="@+id/autres" />
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toEndOf="@+id/buttonSomme"
+        app:layout_constraintTop_toBottomOf="@+id/autres"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/buttonSomme"
         android:layout_width="95dp"
         android:layout_height="37dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/button_format"
-        android:text="@string/somme"
+        android:text="somme Ressources"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintHorizontal_bias="0.025"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/autres" />
+        app:layout_constraintTop_toBottomOf="@+id/checkAutres" />
+
+    <CheckBox
+        android:id="@+id/checkTelephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/telephone"
+        app:layout_constraintEnd_toStartOf="@+id/Telephone"
+        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dep" />
+
+    <CheckBox
+        android:id="@+id/checkFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/food"
+        app:layout_constraintEnd_toStartOf="@+id/food"
+        app:layout_constraintHorizontal_bias="0.303"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkTelephone" />
+
+    <CheckBox
+        android:id="@+id/checkAutres2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/autres"
+        app:layout_constraintEnd_toStartOf="@+id/autres2"
+        app:layout_constraintHorizontal_bias="0.341"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkMedicament" />
+
+    <EditText
+        android:id="@+id/Telephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="272dp"
+        android:ems="10"
+        android:hint="@string/xxx_xxx"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.831"
+        app:layout_constraintStart_toEndOf="@+id/checkSalaire"
+        app:layout_constraintTop_toBottomOf="@+id/res" />
+
+    <EditText
+        android:id="@+id/food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="244dp"
+        android:ems="10"
+        android:hint="@string/xxx_xxx"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintStart_toEndOf="@+id/checkBourse"
+        app:layout_constraintTop_toBottomOf="@+id/salaire" />
+
+
+    <EditText
+        android:id="@+id/autres2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/xxx_xxx"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintStart_toEndOf="@+id/checkAutres"
+        app:layout_constraintTop_toBottomOf="@+id/argentPoche" />
+
+    <CheckBox
+        android:id="@+id/checkEauElectr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Eau et Electricité"
+        app:layout_constraintEnd_toStartOf="@+id/eauElect"
+        app:layout_constraintHorizontal_bias="0.74"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkSport" />
+
+    <CheckBox
+        android:id="@+id/checkSport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Sport"
+        app:layout_constraintEnd_toStartOf="@+id/Sport"
+        app:layout_constraintHorizontal_bias="0.308"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkFood" />
+
+    <CheckBox
+        android:id="@+id/checkMedicament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Medicament"
+        app:layout_constraintEnd_toStartOf="@+id/argentPoche"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ArgentDePoche" />
+
+    <CheckBox
+        android:id="@+id/ArgentDePoche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Argent de poche"
+        app:layout_constraintEnd_toStartOf="@+id/Sport"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkEauElectr" />
+
+    <EditText
+        android:id="@+id/salaire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="@string/xxx_xxx"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toEndOf="@+id/checkSalaire"
+        app:layout_constraintTop_toBottomOf="@+id/res" />
+
+    <EditText
+        android:id="@+id/eauElect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:ems="10"
+        android:hint="@string/xxx_xxx"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintStart_toEndOf="@+id/checkBourse"
+        app:layout_constraintTop_toBottomOf="@+id/salaire" />
+
+    <EditText
+        android:id="@+id/argentPoche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/xxx_xxx"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toEndOf="@+id/ArgentDePoche"
+        app:layout_constraintTop_toBottomOf="@+id/argentPoche2" />
+
+    <EditText
+        android:id="@+id/Sport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="232dp"
+        android:ems="10"
+        android:hint="@string/xxx_xxx"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toEndOf="@+id/checkAutres"
+        app:layout_constraintTop_toBottomOf="@+id/bourse" />
+
+    <Button
+        android:id="@+id/buttonSomme2"
+        android:layout_width="95dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/button_format"
+        android:text="@string/somme_depenses"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkAutres2" />
+
+    <TextView
+        android:id="@+id/somme2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/image5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toEndOf="@+id/buttonSomme2"
+        app:layout_constraintTop_toBottomOf="@+id/autres2"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -39,16 +39,15 @@ import com.example.mini_projet.S_enregistrer;
 public class S_enregistrerActivity2 extends AppCompatActivity {
 
     public static final String TAG = "TAG";
-    private TextView somme;
+    private TextView somme,somme2;
     private ImageButton next;
     private Button btn_out;
     private FirebaseAuth fAuth;
     private FirebaseFirestore fStore;
     private String userID;
-    private CheckBox checkSalaire,checkBourse,checkAutres;
-    private EditText salaire,bourse,autres;
-    private TextView textViewSomme;
-    private Button buttonSomme;
+    private CheckBox checkSalaire,checkBourse,checkAutres,checkFood,checkTelephone,checkMedicament,checkAutres2,checkArgentDePoche,checkEauElectr,checkSport;
+    private EditText salaire,bourse,autres,Telephone,autres2,food,eauElect,sport,argentPoche,Medicament;
+    private Button buttonSomme,buttonSomme2;
 
 
 
@@ -60,19 +59,26 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_s_enregistrer2);
 
         somme = findViewById(R.id.somme);
+        somme2 = findViewById(R.id.somme2);
         next = findViewById(R.id.next);
         btn_out = findViewById(R.id.out);
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
-        checkSalaire = findViewById(R.id.checkSalaire);
-        checkBourse = findViewById(R.id.checkBourse);
-        checkAutres = findViewById(R.id.checkAutres);
-        salaire = findViewById(R.id.salaire);
-        bourse = findViewById(R.id.bourse);
-        autres = findViewById(R.id.autres);
-        textViewSomme = findViewById(R.id.textViewSomme);
+        checkSalaire = findViewById(R.id.checkSalaire);checkFood = findViewById(R.id.checkFood);
+        checkBourse = findViewById(R.id.checkBourse);checkSport = findViewById(R.id.checkSport);
+        checkAutres = findViewById(R.id.checkAutres);checkEauElectr = findViewById(R.id.checkEauElectr);
+        checkMedicament = findViewById(R.id.checkMedicament);checkArgentDePoche = findViewById(R.id.ArgentDePoche);
+        checkAutres2 = findViewById(R.id.checkAutres2);checkTelephone = findViewById(R.id.checkTelephone);
+
+        salaire = findViewById(R.id.salaire);Telephone = findViewById(R.id.Telephone);
+        bourse = findViewById(R.id.bourse);food = findViewById(R.id.food);
+        autres = findViewById(R.id.autres);autres2 = findViewById(R.id.autres2);
+        argentPoche= findViewById(R.id.argentPoche2);Medicament = findViewById(R.id.argentPoche);
+        sport = findViewById(R.id.Sport);eauElect = findViewById(R.id.eauElect);
+
         buttonSomme = findViewById(R.id.buttonSomme);
+        buttonSomme2 = findViewById(R.id.buttonSomme2);
 
         buttonSomme.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,22 +87,51 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                 if(checkSalaire.isChecked()){
                     int sal = Integer.parseInt(salaire.getText().toString());
                     sum += sal;
-                    textViewSomme.setText("somme");
-                    somme.setText(String.valueOf(sum));
                 }
                 if(checkBourse.isChecked()){
                     int bours = Integer.parseInt(bourse.getText().toString());
                     sum += bours;
-                    textViewSomme.setText("somme");
-                    somme.setText(String.valueOf(sum));
                 }
                 if(checkAutres.isChecked()){
-                    int autre = Integer.parseInt(salaire.getText().toString());
+                    int autre = Integer.parseInt(autres.getText().toString());
                     sum += autre;
-                    textViewSomme.setText("somme");
-                    somme.setText(String.valueOf(sum));
                 }
-
+                somme.setText(String.valueOf(sum));
+                }
+        });
+        buttonSomme2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int sum=0;
+                if(checkTelephone.isChecked()){
+                    int tel = Integer.parseInt(Telephone.getText().toString());
+                    sum += tel;
+                }
+                if(checkFood.isChecked()){
+                    int fod = Integer.parseInt(food.getText().toString());
+                    sum += fod;
+                }
+                if(checkAutres2.isChecked()){
+                    int autre = Integer.parseInt(autres2.getText().toString());
+                    sum += autre;
+                }
+                if(checkMedicament.isChecked()){
+                    int medic = Integer.parseInt(Medicament.getText().toString());
+                    sum += medic;
+                }
+                if(checkSport.isChecked()){
+                    int sp = Integer.parseInt(sport.getText().toString());
+                    sum += sp;
+                }
+                if(checkEauElectr.isChecked()){
+                    int eauE = Integer.parseInt(eauElect.getText().toString());
+                    sum += eauE;
+                }
+                if(checkArgentDePoche.isChecked()){
+                    int argent = Integer.parseInt(argentPoche.getText().toString());
+                    sum += argent;
+                }
+                somme2.setText(String.valueOf(sum));
             }
         });
 
@@ -106,15 +141,17 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent x=getIntent();
-                String sum = somme.getText().toString();
+                String sumRess = somme.getText().toString();
+                String sumDepenses= somme2.getText().toString();
 
                 userID = fAuth.getCurrentUser().getUid();
                 DocumentReference documentReference = fStore.collection("users").document(userID);
                 Map<String,Object> user = new HashMap<>();
 
-                user.put("NomComplet",x.getStringExtra("Nom_Complet"));
+                //user.put("Nom Complet",x.getStringExtra("Nom_Complet"));
                 user.put("email",x.getStringExtra("email"));
-                user.put("somme",sum);
+                user.put("Somme Ressources",sumRess);
+                user.put("Somme Depenses",sumDepenses);
 
                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -127,12 +164,9 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                         Log.d(TAG, "onFailure: " + e.toString());
                     }
                 });
-               /* if(TextUtils.isEmpty(somme.getText().toString())) {
-                    somme.setError("La somme est obligatoire.");
-                    return;
-                }*/
                 Intent i=new Intent(S_enregistrerActivity2.this,PageActivity.class);
-                i.putExtra("somme",somme.getText().toString());
+                //i.putExtra("sommeRessources",sumRess);
+                //i.putExtra("sommeDepenses",sumDepenses);
                 startActivity(i);
 
             }

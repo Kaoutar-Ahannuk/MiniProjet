@@ -17,5 +17,9 @@
     <string name="autres">Autres</string>
     <string name="xxx_xxx">xxx.xxx</string>
     <string name="somme">Somme:</string>
+    <string name="maison">Maison</string>
+    <string name="food">Food</string>
+    <string name="telephone">Telephone</string>
+    <string name="somme_depenses">somme Depenses</string>
 
 </resources>

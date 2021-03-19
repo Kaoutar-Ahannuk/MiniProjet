@@ -20,13 +20,15 @@ public class PageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_page);
         somme1=findViewById(R.id.somme1);
         reste1=findViewById(R.id.reste1);
-        depense1=findViewById(R.id.somme1);
+        depense1=findViewById(R.id.depense1);
         voirPlus=findViewById(R.id.voirPlus);
         ajout=findViewById(R.id.ajout);
         btn_out=findViewById(R.id.out);
 
-        somme1.setText(getIntent().getStringExtra("somme"));
-
+        /*somme1.setText(getIntent().getStringExtra("sommeRessources"));
+        depense1.setText(getIntent().getStringExtra("sommeDepenses"));
+        reste1.setText((Integer.parseInt(somme1.getText().toString())-(Integer.parseInt(depense1.getText().toString()))));
+          */
 
         btn_out.setOnClickListener(new View.OnClickListener() {
             @Override
