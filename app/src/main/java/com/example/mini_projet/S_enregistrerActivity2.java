@@ -30,9 +30,11 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import com.example.mini_projet.S_enregistrer;
 
@@ -82,12 +84,13 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
         final Map<String,Object> user = new HashMap<>();
         final Map<String, String> cheked = new HashMap<>();
 
+        final String[] listChecked = new String[3];
+        final String[] listCheckedValues = new String[3];
+
         buttonSomme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int sum=0;
-                String[] listChecked = new String[3];
-                String[] listCheckedValues = new String[3];
                 if(checkSalaire.isChecked()){
                     int sal = Integer.parseInt(salaire.getText().toString());
                     sum += sal;
@@ -108,11 +111,9 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                     listCheckedValues[2]= String.valueOf(autres.getText());
                 }
                 somme.setText(String.valueOf(sum));
-                for (String ch : listChecked ) {
-                    for (String ch2 : listCheckedValues )
-                    cheked.put(ch, ch2);
-                    continue;
-                }
+                /*for (int i=0; i<listChecked.length;i++){
+                    cheked.put(listChecked[i],listCheckedValues[i]);
+                }*/
                 }
         });
         buttonSomme2.setOnClickListener(new View.OnClickListener() {
@@ -159,13 +160,16 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                 Intent x=getIntent();
                 String sumRess = somme.getText().toString();
                 String sumDepenses= somme2.getText().toString();
+                List<String> tags = Arrays.asList(listChecked);
+                List<String> tags2 = Arrays.asList(listCheckedValues);
 
 
                 //user.put("Nom Complet",x.getStringExtra("Nom_Complet"));
                 user.put("email",x.getStringExtra("email"));
                 user.put("Somme Ressources",sumRess);
                 user.put("Somme Depenses",sumDepenses);
-                user.put("list",cheked);
+                user.put("listChecked",tags);
+                user.put("listValues",tags2);
 
                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
