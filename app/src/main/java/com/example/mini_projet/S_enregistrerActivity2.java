@@ -81,13 +81,16 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
 
         userID = fAuth.getCurrentUser().getUid();
         final DocumentReference documentReference = fStore.collection("users").document(userID);
-        final Map<String,Object> user = new HashMap<>();
-        //final Map<String, String> cheked = new HashMap<>();
 
-        final String[] listChecked = new String[3];
-        final Integer[] listCheckedValues = new Integer[3];
-        final String[] listCheckedD = new String[7];
-        final Integer[] listCheckedDValues = new Integer[7];
+        final Map<String,Object> user = new HashMap<>();
+
+        final Map<String, Integer> res = new HashMap<>();
+        final Map<String, Integer> dep = new HashMap<>();
+
+       // final String[] listChecked = new String[3];
+       // final Integer[] listCheckedValues = new Integer[3];
+       // final String[] listCheckedD = new String[7];
+       // final Integer[] listCheckedDValues = new Integer[7];
 
         buttonSomme.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,21 +99,24 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                 if(checkSalaire.isChecked()){
                     int sal = Integer.parseInt(salaire.getText().toString());
                     sum += sal;
-                    listChecked[0]= String.valueOf(checkSalaire.getText());
-                    listCheckedValues[0]= sal;
+                    //listChecked[0]= String.valueOf(checkSalaire.getText());
+                    //listCheckedValues[0]= sal;
+                    res.put(String.valueOf(checkSalaire.getText()),sal);
 
                 }
                 if(checkBourse.isChecked()){
                     int bours = Integer.parseInt(bourse.getText().toString());
                     sum += bours;
-                    listChecked[1]= String.valueOf(checkBourse.getText());
-                    listCheckedValues[1]= bours;
+                    //listChecked[1]= String.valueOf(checkBourse.getText());
+                    //listCheckedValues[1]= bours;
+                    res.put(String.valueOf(checkBourse.getText()),bours);
                 }
                 if(checkAutres.isChecked()){
                     int autre = Integer.parseInt(autres.getText().toString());
                     sum += autre;
-                    listChecked[2]= String.valueOf(checkAutres.getText());
-                    listCheckedValues[2]= autre;
+                    //listChecked[2]= String.valueOf(checkAutres.getText());
+                    //listCheckedValues[2]= autre;
+                    res.put(String.valueOf(checkAutres.getText()),autre);
                 }
                 somme.setText(String.valueOf(sum));
                 /*for (int i=0; i<listChecked.length;i++){
@@ -125,44 +131,57 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                 if(checkTelephone.isChecked()){
                     int tel = Integer.parseInt(Telephone.getText().toString());
                     sum += tel;
-                    listCheckedD[0]= String.valueOf(checkTelephone.getText());
-                    listCheckedDValues[0]= tel;
+                   // listCheckedD[0]= String.valueOf(checkTelephone.getText());
+                   // listCheckedDValues[0]= tel;
+                    dep.put(String.valueOf(checkTelephone.getText()),tel);
                 }
                 if(checkFood.isChecked()){
                     int fod = Integer.parseInt(food.getText().toString());
                     sum += fod;
-                    listCheckedD[1]= String.valueOf(checkFood.getText());
-                    listCheckedDValues[1]= fod;
+                   // listCheckedD[1]= String.valueOf(checkFood.getText());
+                   // listCheckedDValues[1]= fod;
+                    dep.put(String.valueOf(checkFood.getText()),fod);
+
                 }
                 if(checkAutres2.isChecked()){
                     int autre = Integer.parseInt(autres2.getText().toString());
                     sum += autre;
-                    listCheckedD[2]= String.valueOf(checkAutres2.getText());
-                    listCheckedDValues[2]= autre;
+                   // listCheckedD[2]= String.valueOf(checkAutres2.getText());
+                   // listCheckedDValues[2]= autre;
+                    dep.put(String.valueOf(checkAutres2.getText()),autre);
+
                 }
                 if(checkMedicament.isChecked()){
                     int medic = Integer.parseInt(Medicament.getText().toString());
                     sum += medic;
-                    listCheckedD[3]= String.valueOf(checkMedicament.getText());
-                    listCheckedDValues[3]= medic;
+                   // listCheckedD[3]= String.valueOf(checkMedicament.getText());
+                   // listCheckedDValues[3]= medic;
+                    dep.put(String.valueOf(checkMedicament.getText()),medic);
+
                 }
                 if(checkSport.isChecked()){
                     int sp = Integer.parseInt(sport.getText().toString());
                     sum += sp;
-                    listCheckedD[4]= String.valueOf(checkSport.getText());
-                    listCheckedDValues[4]= sp;
+                   // listCheckedD[4]= String.valueOf(checkSport.getText());
+                   // listCheckedDValues[4]= sp;
+                    dep.put(String.valueOf(checkSport.getText()),sp);
+
                 }
                 if(checkEauElectr.isChecked()){
                     int eauE = Integer.parseInt(eauElect.getText().toString());
                     sum += eauE;
-                    listCheckedD[5]= String.valueOf(checkEauElectr.getText());
-                    listCheckedDValues[5]= eauE;
+                   // listCheckedD[5]= String.valueOf(checkEauElectr.getText());
+                   // listCheckedDValues[5]= eauE;
+                    dep.put(String.valueOf(checkEauElectr.getText()),eauE);
+
                 }
                 if(checkArgentDePoche.isChecked()){
                     int argent = Integer.parseInt(argentPoche.getText().toString());
                     sum += argent;
-                    listCheckedD[6]= String.valueOf(checkArgentDePoche.getText());
-                    listCheckedDValues[6]= argent;
+                   // listCheckedD[6]= String.valueOf(checkArgentDePoche.getText());
+                   // listCheckedDValues[6]= argent;
+                    dep.put(String.valueOf(checkArgentDePoche.getText()),argent);
+
                 }
                 somme2.setText(String.valueOf(sum));
             }
@@ -176,19 +195,24 @@ public class S_enregistrerActivity2 extends AppCompatActivity {
                 Intent x=getIntent();
                 String sumRess = somme.getText().toString();
                 String sumDepenses= somme2.getText().toString();
-                List<String> ressources = Arrays.asList(listChecked);
-                List<Integer> ressources2 = Arrays.asList(listCheckedValues);
-                List<String> depenses = Arrays.asList(listCheckedD);
-                List<Integer> depenses2 = Arrays.asList(listCheckedDValues);
+               // List<String> ressources = Arrays.asList(listChecked);
+               // List<Integer> ressources2 = Arrays.asList(listCheckedValues);
+               // List<String> depenses = Arrays.asList(listCheckedD);
+               // List<Integer> depenses2 = Arrays.asList(listCheckedDValues);
+                Map<String,Integer> mapres = res;
+                Map<String,Integer> mapdep = dep;
+
 
                 //user.put("Nom Complet",x.getStringExtra("Nom_Complet"));
                 user.put("email",x.getStringExtra("email"));
                 user.put("SommeRessources",sumRess);
                 user.put("SommeDepenses",sumDepenses);
-                user.put("listRessources",ressources);
-                user.put("listRessourcesValues",ressources2);
-                user.put("listDepenses",depenses);
-                user.put("listDepensesValues",depenses2);
+                user.put("ressources",mapres);
+                user.put("depences",mapdep);
+                //  user.put("listRessources",ressources);
+              //  user.put("listRessourcesValues",ressources2);
+              //  user.put("listDepenses",depenses);
+              //  user.put("listDepensesValues",depenses2);
 
                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
