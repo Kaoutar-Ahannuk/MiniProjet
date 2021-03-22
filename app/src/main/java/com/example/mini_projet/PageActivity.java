@@ -1,46 +1,73 @@
 package com.example.mini_projet;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.util.Log;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
-import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
+
+//import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+//import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
 public class PageActivity extends AppCompatActivity {
-    private EditText somme1, reste1, depense1;
-    private Button voirPlus, ajout,btn_out,buttonVoir;
+
+    private static final String TAG = "test";
+
+    private TextView somme1, reste1, depense1;
+    private Button voirPlus, ajout, btn_out, buttonVoir;
     private RecyclerView mStoreList;
-    private FirebaseFirestore fStore;
-    FirestoreRecyclerAdapter adapter;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    private String userID=user.getUid();
+    //  FirestoreRecyclerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page);
-        somme1=findViewById(R.id.somme1);
-        reste1=findViewById(R.id.reste1);
-        depense1=findViewById(R.id.depense1);
-        voirPlus=findViewById(R.id.voirPlus);
-        ajout=findViewById(R.id.ajout);
-        btn_out=findViewById(R.id.out);
-        buttonVoir=findViewById(R.id.buttonVoir);
-        mStoreList=findViewById(R.id.fireStoreList);
+        somme1 = findViewById(R.id.somme1);
+        reste1 = findViewById(R.id.reste1);
+        depense1 = findViewById(R.id.depense1);
+        voirPlus = findViewById(R.id.voirPlus);
+        ajout = findViewById(R.id.ajout);
+        btn_out = findViewById(R.id.out);
+        buttonVoir = findViewById(R.id.buttonVoir);
+        mStoreList = findViewById(R.id.fireStoreList);
 
-        fStore = FirebaseFirestore.getInstance();
+        DocumentReference docRef= db.collection("users").document(userID);
+        docRef.get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()) {
+                            String somme = documentSnapshot.getString("SommeRessources");
+                            Log.d(TAG, "DocumentSnapshot data: " + documentSnapshot.getData());
+                            somme1.setText(somme);
+                        } else {
+                            Log.d(TAG, "No such document");
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d(TAG, "get failed with ");
+
+                    }
+                });
+
+/*
         buttonVoir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,5 +131,8 @@ public class PageActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         adapter.stopListening();
+    }
+
+ */
     }
 }
