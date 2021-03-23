@@ -7,6 +7,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -15,18 +16,30 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/t1"
+            android:id="@+id/chcked"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:gravity="center_vertical|center_horizontal"
+            android:text="TextView" />
 
-        <EditText
-            android:id="@+id/e1"
+        <TextView
+            android:id="@+id/value"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:ems="10"
-            android:inputType="number" />
+            android:gravity="center_vertical|center_horizontal"
+            android:text="TextView" />
+
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar4"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="330dp"
+        android:layout_height="33dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

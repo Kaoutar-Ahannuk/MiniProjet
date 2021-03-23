@@ -66,10 +66,9 @@ public class PageActivity extends AppCompatActivity {
                             depense1.setText(depense);
                             reste1.setText(String.valueOf(reste));
                             reste2.setText(String.valueOf(reste));
-                            rest = reste;
                             sum = Integer.parseInt(String.valueOf(somme));
                             progressBar.setMax(sum);
-                            progressBar.setProgress(rest);
+                            progressBar.setProgress(reste);
                             progressBar.getProgress();
                         } else {
                             Log.d(TAG, "No such document");
