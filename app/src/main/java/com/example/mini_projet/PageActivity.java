@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,7 +33,9 @@ public class PageActivity extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private String userID=user.getUid();
-    //  FirestoreRecyclerAdapter adapter;
+    private ProgressBar progressBar;
+    private int rest;
+    private int sum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +49,8 @@ public class PageActivity extends AppCompatActivity {
         ajout = findViewById(R.id.ajout);
         btn_out = findViewById(R.id.out);
         buttonVoir = findViewById(R.id.buttonVoir);
-        mStoreList = findViewById(R.id.fireStoreList);
+        progressBar = findViewById(R.id.progressBar);
+       // mStoreList = findViewById(R.id.fireStoreList);
 
         DocumentReference docRef= db.collection("users").document(userID);
         docRef.get()
@@ -62,6 +66,11 @@ public class PageActivity extends AppCompatActivity {
                             depense1.setText(depense);
                             reste1.setText(String.valueOf(reste));
                             reste2.setText(String.valueOf(reste));
+                            rest = reste;
+                            sum = Integer.parseInt(String.valueOf(somme));
+                            progressBar.setMax(sum);
+                            progressBar.setProgress(rest);
+                            progressBar.getProgress();
                         } else {
                             Log.d(TAG, "No such document");
                         }
@@ -74,6 +83,9 @@ public class PageActivity extends AppCompatActivity {
 
                     }
                 });
+
+
+
 
 /*
         buttonVoir.setOnClickListener(new View.OnClickListener() {
@@ -117,6 +129,8 @@ public class PageActivity extends AppCompatActivity {
             }
         });
     }
+
+
     /*
 
     private class MViewHolder extends RecyclerView.ViewHolder {
