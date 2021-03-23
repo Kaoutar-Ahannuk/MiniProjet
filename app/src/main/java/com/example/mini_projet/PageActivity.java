@@ -1,7 +1,9 @@
 package com.example.mini_projet;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -24,7 +26,7 @@ public class PageActivity extends AppCompatActivity {
 
     private static final String TAG = "test";
 
-    private TextView somme1, reste1, depense1;
+    private TextView somme1, reste1, depense1,reste2;
     private Button voirPlus, ajout, btn_out, buttonVoir;
     private RecyclerView mStoreList;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -38,6 +40,7 @@ public class PageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_page);
         somme1 = findViewById(R.id.somme1);
         reste1 = findViewById(R.id.reste1);
+        reste2 = findViewById(R.id.reste2);
         depense1 = findViewById(R.id.depense1);
         voirPlus = findViewById(R.id.voirPlus);
         ajout = findViewById(R.id.ajout);
@@ -52,8 +55,13 @@ public class PageActivity extends AppCompatActivity {
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         if (documentSnapshot.exists()) {
                             String somme = documentSnapshot.getString("SommeRessources");
+                            String depense = documentSnapshot.getString("SommeDepenses");
+                            int reste= Integer.parseInt(String.valueOf(somme))-Integer.parseInt(String.valueOf(depense));
                             Log.d(TAG, "DocumentSnapshot data: " + documentSnapshot.getData());
                             somme1.setText(somme);
+                            depense1.setText(depense);
+                            reste1.setText(String.valueOf(reste));
+                            reste2.setText(String.valueOf(reste));
                         } else {
                             Log.d(TAG, "No such document");
                         }
@@ -99,7 +107,7 @@ public class PageActivity extends AppCompatActivity {
             }
         });
 
-
+*/
         btn_out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,6 +117,7 @@ public class PageActivity extends AppCompatActivity {
             }
         });
     }
+    /*
 
     private class MViewHolder extends RecyclerView.ViewHolder {
         private TextView t1;
@@ -135,4 +144,3 @@ public class PageActivity extends AppCompatActivity {
 
  */
     }
-}

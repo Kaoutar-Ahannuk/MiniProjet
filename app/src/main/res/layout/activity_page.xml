@@ -252,7 +252,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/reste2"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginTop="268dp"
@@ -274,7 +274,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.414"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintTop_toBottomOf="@+id/reste2" />
 
     <Button
         android:id="@+id/out"
