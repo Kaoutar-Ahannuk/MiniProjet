@@ -82,6 +82,12 @@ public class PageActivity extends AppCompatActivity {
 
                     }
                 });
+        ajout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(PageActivity.this,Ajout_Activity.class));
+            }
+        });
 
 
 

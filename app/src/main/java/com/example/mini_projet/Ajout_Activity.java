@@ -3,9 +3,17 @@ package com.example.mini_projet;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -26,13 +34,14 @@ import java.util.Map;
 
 public class Ajout_Activity extends AppCompatActivity {
     private static final String TAG = "test";
+    private Button buutonVoirD;
     private ListView listView;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private String userID=user.getUid();
-    String checkedList [];
-    String valuesList [];
     List<String> Val =new ArrayList();
+    List<String> Check =new ArrayList();
+
 
 
     @Override
@@ -41,19 +50,22 @@ public class Ajout_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_ajout);
 
         listView=findViewById(R.id.listView);
-        //final Map<String, Object> dep;
+        buutonVoirD=findViewById(R.id.buttonVoirD);
 
-        final DocumentReference docRef= db.collection("users").document(userID);
-        CollectionReference cr=docRef.collection("depences");
-        cr.get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        DocumentReference docRef= db.collection("users").document(userID);
+        docRef.get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots){
-                            Map<String, Object> dep = documentSnapshot.getData();
-                            Val.add(String.valueOf(dep.values()));
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()) {
+                            Map<String,String> dep= (Map<String, String>) documentSnapshot.get("depences");
+                            Log.d(TAG, "DocumentSnapshot data depenses: " + dep);
+                            Check.addAll(dep.keySet());
+                            Val.addAll(dep.values());
+                            Log.d(TAG, "List Checked: " + Check + "and list Values: " + Val);
+                        } else {
+                            Log.d(TAG, "No such document");
                         }
-
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -63,6 +75,56 @@ public class Ajout_Activity extends AppCompatActivity {
 
                     }
                 });
+
+        buutonVoirD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), Check, Val);
+                listView.setAdapter(customAdapter);
+            }
+        });
+    }
+
+    private class CustomAdapter extends BaseAdapter {
+        Context context;
+        List<String> Check;
+        List<String> Val;
+
+        public CustomAdapter(Context applicationContext, List<String> Check, List<String> Val) {
+            this.context = applicationContext;
+            this.Check = Check;
+            this.Val = Val;
+        }
+        @Override
+        public int getCount() {
+            return Check.size();
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int i, View convertView, ViewGroup viewGroup) {
+            final View result;
+
+            if (convertView == null) {
+                result = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.listitem, viewGroup, false);
+            } else {
+                result = convertView;
+            }
+            TextView check2 = (TextView)result.findViewById(R.id.chcked);
+            TextView value = (TextView) result.findViewById(R.id.value);
+            check2.setText(Check.get(i));
+            value.setText(String.valueOf(Val.get(i)));
+            return result;
+        }
 
     }
 }
